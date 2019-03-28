@@ -17,20 +17,56 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'Index',
+        path: 'Order',
         children: [
           {
             path: '',
-            loadChildren: '../Index/Index.module#IndexPageModule'
+            loadChildren: '../Order/Order.module#OrderPageModule'
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'Glossary',
         children: [
           {
             path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            loadChildren: '../Glossary/Glossary.module#GlossaryPageModule'
+          }
+        ]
+      },
+      {
+        path: 'Contact',
+        children: [
+          {
+            path: '',
+            loadChildren: '../Contact/Contact.module#ContactPageModule'
+          }
+        ]
+      },
+      {
+        path: 'About',
+        children: [
+          {
+            path: '',
+            loadChildren: '../About/About.module#AboutPageModule'
+          }
+        ]
+      },
+      {
+        path: 'Feedback',
+        children: [
+          {
+            path: '',
+            loadChildren: '../Feedback/Feedback.module#FeedbackPageModule'
+          }
+        ]
+      },
+      {
+        path: 'Rate',
+        children: [
+          {
+            path: '',
+            loadChildren: '../Rate/Rate.module#RatePageModule'
           }
         ]
       },
