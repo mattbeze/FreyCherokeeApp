@@ -1,0 +1,51 @@
+.welcome-card ion-img {
+    max-height: 35vh;
+    overflow: scroll;
+  }
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color:#989aa2;
+  }
+
+td {
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 8px;
+  }
+
+tr:nth-child(even) {
+    background-color: #989aa2;
+  }
+
+h2 {
+      font-family: arial, sans-serif;
+      text-align: center;
+      background-color: #c3b091;
+  }
+
+img {
+    text-align: center;
+    background-color: #c3b091;
+  }
+
+p {
+    text-align: center;
+    background-color: #c3b091;
+  }
+
+ion-content {
+    --background: lightgoldenyellow;
+    background-color: #c3b091;
+    --color: white;
+    text-align: center;
+    font-family: arial, sans-serif;
+   
+  }
+body {
+    background-color: #c3b091;
+}
+
+  
