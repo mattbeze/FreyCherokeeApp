@@ -61,14 +61,21 @@ ion-icon{
   --name: "volume-high";
 }
 .oddRow{
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
   background:#989aa2;
   color: white;
   border-color: black;
   border-width: 20px;  
   text-align: center;
   vertical-align: middle; 
+}
+.headerDiv{
+  widows: 100%;
+  height: 100%;
+  color: white;
+  font-weight: bold;
+
 }
 
   
