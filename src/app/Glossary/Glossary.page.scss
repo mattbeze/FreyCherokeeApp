@@ -49,5 +49,26 @@ ion-content {
 body {
     background-color: #c3b091;
 }
+ion-fab-button{
+  --color: white;
+  --background-activated: blue;
+  --background: black;
+  --background-focused: grey;
+  text-align: right;
+  justify-content: center;
+}
+ion-icon{
+  --name: "volume-high";
+}
+.oddRow{
+  width:100%;
+  height:100%;
+  background:#989aa2;
+  color: white;
+  border-color: black;
+  border-width: 20px;  
+  text-align: center;
+  vertical-align: middle; 
+}
 
   
