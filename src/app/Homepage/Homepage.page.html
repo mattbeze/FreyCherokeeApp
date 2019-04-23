@@ -6,16 +6,8 @@
 
         <br>
         <br>
-     <!---   <audio id="audio" src="http://www.soundjay.com/button/beep-07.mp3" autoplay="false" ></audio>
-    <a onclick="playSound();">Play</a>
-    <script>
-    function playSound() {
-          var sound = document.getElementById("audio");
-          sound.play();
-      }
-    </script>-->
-
         <br>
+
         <h3>¡Bienvenidos!</h3>
         <br>
         This application is a prototype designed to help people learn Spanish in a contextual setting.
@@ -26,7 +18,25 @@
         Take a look at the glossary for extra terms, or to specify your own order of coffee and any extra items as necessary.
         <br>
         <br>
+      <!---  <ion-button expand="block" (click)="scheduleNotification()">Schedule</ion-button>
+        <ion-list>
+          <ion-item *ngFor="let n of scheduled">
+            <ion-label text-wrap>
+              {{n.id}} - {{n.title}}
+              <p>Trigger: {{n.trigger | json }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>-->
         <br>
+        The hours for available spanish-speaking baristas are posted below.
+        <br>
+        Mon-Thu: 7:30am-6:00pm
+        <br>
+        Fri: 7:30am-4:00pm
+        <br>
+        <br>
+
+
 
         Click the "Order a Coffee" button to get started!
         <br>  

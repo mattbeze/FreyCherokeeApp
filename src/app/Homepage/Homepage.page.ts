@@ -1,8 +1,9 @@
 import { Component, ElementRef } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, AlertController, Platform } from '@ionic/angular';
 import { ViewChild } from '@angular/core';
 import leaflet from 'leaflet';
 import 'leaflet-routing-machine';
+import { LocalNotifications, ELocalNotificationTriggerUnit } from '@ionic-native/local-notifications/ngx';
 
 @Component({
   selector: 'app-Homepage',
@@ -10,9 +11,23 @@ import 'leaflet-routing-machine';
   styleUrls: ['Homepage.page.scss']
 })
 export class HomepagePage {
+  scheduled = [];
   @ViewChild('map') mapContainer: ElementRef;
   map: any;
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private plt: Platform, private localNotifications: LocalNotifications,
+    private alertCtrl: AlertController) {
+      this.plt.ready().then(() => {
+        this.localNotifications.on('trigger').subscribe(res => {
+          console.log('trigger: ', res);
+          const msg = res.data ? res.data.mydata : '';
+          this.showAlert(res.title, res.text, msg);
+      });
+      this.localNotifications.on('click').subscribe(res => {
+        console.log('click: ', res);
+        const msg = res.data ? res.data.mydata : '';
+          this.showAlert(res.title, res.text, msg);
+      });
+    });
   }
 
   ionViewDidEnter() {
@@ -73,4 +88,22 @@ export class HomepagePage {
     });
   }
 
+
+  scheduleNotification() {
+    this.localNotifications.schedule({
+      id: 1,
+      title: 'Attention',
+      text: 'Mattheus Notification',
+      data: {mydata: 'Hidden Message here'},
+      trigger: { in: 5, unit: ELocalNotificationTriggerUnit.SECOND }
+    });
+  }
+  showAlert(header, sub, msg) {
+    this.alertCtrl.create({
+      header: header,
+      subHeader: sub,
+      message: msg,
+      buttons: ['Ok']
+    }).then(alert => alert.present());
+  }
 }
